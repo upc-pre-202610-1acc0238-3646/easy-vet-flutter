@@ -15,11 +15,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: ChangeNotifierProvider(
-          create: (context) => getIt<HomeViewModel>(),
-          child: MainPage(),
-        ),
+      home: ChangeNotifierProvider(
+        create: (context) => getIt<HomeViewModel>(),
+        child: MainPage(),
       ),
     );
   }
