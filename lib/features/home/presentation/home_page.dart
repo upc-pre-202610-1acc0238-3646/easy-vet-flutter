@@ -10,18 +10,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final HomeViewModel viewModel = context.watch<HomeViewModel>();
 
-    if (viewModel.isLoading) {
+    if (viewModel.state.isLoading) {
       return const Center(child: CircularProgressIndicator());
     }
 
-    if (viewModel.errorMessage != null) {
-      return Center(child: Text(viewModel.errorMessage!));
+    if (viewModel.state.errorMessage != null) {
+      return Center(child: Text(viewModel.state.errorMessage!));
     }
 
     return ListView.builder(
-      itemCount: viewModel.products.length,
+      itemCount: viewModel.state.products.length,
       itemBuilder: (context, index) =>
-          ProductItem(product: viewModel.products[index]),
+          ProductItem(product: viewModel.state.products[index]),
     );
   }
 }
