@@ -73,8 +73,8 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              
-             
+              if (state is LoginLoading)
+                const Center(child: CircularProgressIndicator()),
             ],
           );
         },
