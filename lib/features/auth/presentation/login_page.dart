@@ -3,7 +3,6 @@ import 'package:easy_vet/features/auth/presentation/login_view_model.dart';
 import 'package:easy_vet/features/main/presentation/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
