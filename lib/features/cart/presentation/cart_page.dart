@@ -24,7 +24,21 @@ class CartPage extends StatelessWidget {
       itemCount: state.items.length,
       itemBuilder: (context, index) {
         final item = state.items[index];
-        return Item(item: item);
+        return Dismissible(
+          key: Key(item.productId.toString()),
+          background: const ColoredBox(
+            color: Colors.red,
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Icon(Icons.delete, color: Colors.white),
+              ),
+            ),
+          ),
+          onDismissed: (direction) => viewModel.removeFromCart(item.productId),
+          child: Item(item: item),
+        );
       },
     );
   }

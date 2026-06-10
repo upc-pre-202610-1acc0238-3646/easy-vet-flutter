@@ -32,4 +32,14 @@ class CartViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  Future<void> removeFromCart(int productId) async {
+    try {
+      await repository.removeFromCart(productId);
+      await loadCartItems();
+    } catch (e) {
+      state = state.copyWith(errorMessage: e.toString());
+      notifyListeners();
+    }
+  }
 }

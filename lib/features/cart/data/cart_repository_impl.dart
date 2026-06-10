@@ -18,9 +18,8 @@ class CartRepositoryImpl implements CartRepository {
   }
 
   @override
-  Future<void> removeFromCart(int productId) {
-    // TODO: implement removeFromCart
-    throw UnimplementedError();
+  Future<void> removeFromCart(int productId) async {
+    await service.addToCart(productId, 0);
   }
 
   @override
