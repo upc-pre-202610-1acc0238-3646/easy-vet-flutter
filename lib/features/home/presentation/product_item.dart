@@ -12,7 +12,10 @@ class ProductItem extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Image.network(product.image, height: 240),
+            Hero(
+              tag: product.id,
+              child: Image.network(product.image, height: 240),
+            ),
             Text(
               product.name,
               style: const TextStyle(fontWeight: FontWeight.bold),

@@ -7,9 +7,8 @@ class CartRepositoryImpl implements CartRepository {
   const CartRepositoryImpl({required this.service});
 
   @override
-  Future<void> addToCart(String productId, int quantity) {
-    // TODO: implement addToCart
-    throw UnimplementedError();
+  Future<void> addToCart(int productId, int quantity) async {
+    await service.addToCart(productId, quantity);
   }
 
   @override
@@ -19,13 +18,13 @@ class CartRepositoryImpl implements CartRepository {
   }
 
   @override
-  Future<void> removeFromCart(String productId) {
+  Future<void> removeFromCart(int productId) {
     // TODO: implement removeFromCart
     throw UnimplementedError();
   }
 
   @override
-  Future<void> updateCartItem(String productId, int quantity) {
+  Future<void> updateCartItem(int productId, int quantity) {
     // TODO: implement updateCartItem
     throw UnimplementedError();
   }

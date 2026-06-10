@@ -22,4 +22,14 @@ class CartViewModel extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  Future<void> addToCart(int productId, int quantity) async {
+    try {
+      await repository.addToCart(productId, quantity);
+      await loadCartItems();
+    } catch (e) {
+      state = state.copyWith(errorMessage: e.toString());
+      notifyListeners();
+    }
+  }
 }
