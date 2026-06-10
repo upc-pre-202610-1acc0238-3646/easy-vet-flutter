@@ -1,3 +1,4 @@
+import 'package:easy_vet/features/cart/presentation/cart_page.dart';
 import 'package:easy_vet/features/home/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _MainPageState extends State<MainPage> {
   final List<Widget> pages = const [
     HomePage(),
     HomePage(),
-    HomePage(),
+    CartPage(),
     HomePage(),
   ];
 

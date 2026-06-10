@@ -30,7 +30,7 @@ class CartService {
 
         if(response.statusCode == HttpStatus.ok) {
           final json = jsonDecode(response.body);
-          final items = json['results'];
+          final List items = json['results'];
           return items.map((item) => CartItemDto.fromJson(item)).toList();
         } else {
           throw Exception('Failed to load cart items');
