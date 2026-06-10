@@ -1,5 +1,6 @@
 import 'package:easy_vet/features/cart/presentation/cart_state.dart';
 import 'package:easy_vet/features/cart/presentation/cart_view_model.dart';
+import 'package:easy_vet/features/cart/presentation/item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,11 +24,7 @@ class CartPage extends StatelessWidget {
       itemCount: state.items.length,
       itemBuilder: (context, index) {
         final item = state.items[index];
-        return ListTile(
-          title: Text(item.name),
-          subtitle: Text('\$${item.price.toStringAsFixed(2)}'),
-          trailing: Text('x${item.quantity}'),
-        );
+        return Item(item: item);
       },
     );
   }
