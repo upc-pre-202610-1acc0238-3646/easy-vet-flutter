@@ -3,6 +3,7 @@ import 'package:easy_vet/features/auth/presentation/login_page.dart';
 import 'package:easy_vet/features/auth/presentation/login_view_model.dart';
 import 'package:easy_vet/features/cart/presentation/cart_view_model.dart';
 import 'package:easy_vet/features/home/presentation/home_view_model.dart';
+import 'package:easy_vet/features/main/presentation/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +29,6 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage());
+      home: MainPage());
   }
 }

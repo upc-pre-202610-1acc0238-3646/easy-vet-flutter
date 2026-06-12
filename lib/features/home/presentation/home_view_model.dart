@@ -13,6 +13,7 @@ class HomeViewModel extends ChangeNotifier {
   HomeState state = HomeState();
 
   Future<void> loadProducts() async {
+    //await repository.syncProducts();
     state = state.copyWith(isLoading: true);
     notifyListeners();
 

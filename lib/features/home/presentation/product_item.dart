@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_vet/features/home/domain/product.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,11 @@ class ProductItem extends StatelessWidget {
             Expanded(
               child: Hero(
                 tag: product.id,
-                child: Image.network(product.image, width: double.infinity),
+                child: CachedNetworkImage(
+                  imageUrl: product.image,
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  width: double.infinity,
+                ),
               ),
             ),
             Text(
