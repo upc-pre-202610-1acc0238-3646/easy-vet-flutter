@@ -11,15 +11,21 @@ class ProductItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Hero(
-              tag: product.id,
-              child: Image.network(product.image, height: 240),
+            Expanded(
+              child: Hero(
+                tag: product.id,
+                child: Image.network(product.image, width: double.infinity),
+              ),
             ),
             Text(
               product.name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
+            Text('\$${product.price.toStringAsFixed(2)}'),
           ],
         ),
       ),
